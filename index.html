@@ -15,21 +15,37 @@
             let computerChoice;
             switch (num) {
                 case 0:
-                    computerChoice = "rock";
+                    computerChoice = "Rock";
                     break;
 
                 case 1:
-                    computerChoice = "paper";
+                    computerChoice = "Paper";
                     break;
 
                 case 2:
-                    computerChoice = "scissors";
+                    computerChoice = "Scissors";
                     break;
             }
             return computerChoice;
         }
 
-        getComputerChoice();
+        let playerSelection = "Rock";
+        let computerSelection = getComputerChoice();
+
+        function playRound(playerSelection, computerSelection) {
+
+            if (playerSelection === "Rock" && computerSelection === "Scissors") {
+                console.log("You win! Rock breaks scissors.");
+            }
+            else if (playerSelection === "Rock" && computerSelection === "Paper") {
+                console.log("You lose! Paper covers rock.");
+            }
+            else {
+                console.log("It's a tie! You've both selected the same.");
+            }
+        }
+        playRound(playerSelection, computerSelection);
+
     </script>
 
 
