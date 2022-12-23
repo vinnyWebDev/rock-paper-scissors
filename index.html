@@ -30,14 +30,14 @@
             return computerChoice;
         }
 
-        let playerSelection = "Rock";
-        let computerSelection = getComputerChoice();
+        let playerSelection = prompt("Rock, Paper or Scissors?");
         /*Function witch compares players choices and determines whether player wins or loses*/
-        function playRound(playerSelection, computerSelection) {
+        function playRound(playerSelection) {
+            let computerSelection = getComputerChoice();    
             let gameResult;
             /*converts all input to lowercase*/
             playerSelection = playerSelection.toLowerCase();
-            computerSelection   = computerSelection.toLowerCase();
+            computerSelection = computerSelection.toLowerCase();
             /*If player chooses rock*/
             if (playerSelection === "rock" && computerSelection === "scissors") {
                 gameResult = "You win! Rock breaks scissors.";
@@ -47,7 +47,7 @@
             }
             /*If player chooses paper*/
             else if (playerSelection === "paper" && computerSelection === "rock") {
-                gameResult ="You win! Paper covers rock.";
+                gameResult = "You win! Paper covers rock.";
             }
             else if (playerSelection === "paper" && computerSelection === "scissors") {
                 gameResult = "You lose! Scissors cuts paper.";
@@ -66,7 +66,13 @@
             return gameResult;
         }
 
-       playRound(playerSelection, computerSelection);
+        function game() {
+            let num = 0;
+            for (i = 0; i < 5; i++) {
+                console.log(playRound(playerSelection));
+            }
+        }
+        game();
 
     </script>
 
